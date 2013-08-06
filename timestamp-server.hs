@@ -10,14 +10,8 @@ increment counter = do
 	x <- readTVar counter
 	writeTVar counter (x + 1)
 
-main :: IO ()
-main = quickHttpServe site
+main = quickHttpServe $ ifTop atomicGetTimestamp
 
-site :: Snap ()
-site = ifTop (atomicGetTimestamp)
-
-
---atomicGetTimestamp :: Snap ()
 atomicGetTimestamp = do
 	let timestamp = declareTVar "timestamp" 0
 	counter <- liftIO $ atomically (increment timestamp)

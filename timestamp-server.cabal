@@ -19,7 +19,7 @@ executable timestamp-server
   main-is: timestamp-server.hs       
   -- other-modules:       
   build-depends:
-        base ==4.6.*,
+        base,
         stm,
         snap-core,
         snap-server,
