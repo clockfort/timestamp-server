@@ -15,5 +15,4 @@ main = quickHttpServe $ ifTop atomicGetTimestamp
 atomicGetTimestamp = do
 	let timestamp = declareTVar "timestamp" 0
 	counter <- liftIO $ atomically (increment timestamp)
-	current <- liftIO $ atomically (readTVar timestamp)
-	writeText $ pack $ show current
+	writeText $ pack $ show counter
