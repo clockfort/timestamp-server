@@ -1,11 +1,8 @@
-import Control.Concurrent
 import Control.Concurrent.STM
 import Control.Monad.Trans
-import qualified Data.ByteString as B
 import Snap.Core
 import Snap.Http.Server
 import Data.Global
---import Control.Applicative
 import Data.Text hiding (map, concat, head, last, zip)
 
 increment :: TVar Int -> STM ()

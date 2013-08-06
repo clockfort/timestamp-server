@@ -25,4 +25,5 @@ executable timestamp-server
         snap-server,
         global-variables,
         bytestring,
-        text
+        text,
+        mtl
